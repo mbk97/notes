@@ -3,6 +3,7 @@ import AuthInput from "./components/Inputs/AuthInput";
 import { GlobalStyle } from "./GlobalStyle/GlobalStyle";
 import { CiUser } from "react-icons/ci";
 import { BiLock } from "react-icons/bi";
+import AuthButton from "./components/buttons/Button";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         name="password"
         labelTitle="Password"
       />
+      <AuthButton>Hello</AuthButton>
     </div>
   );
 }
