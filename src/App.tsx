@@ -1,9 +1,33 @@
 import React from "react";
+import AuthInput from "./components/Inputs/AuthInput";
+import { GlobalStyle } from "./GlobalStyle/GlobalStyle";
+import { CiUser } from "react-icons/ci";
+import { BiLock } from "react-icons/bi";
 
 function App() {
   return (
-    <div className="App">
-      <h1>hello</h1>
+    <div
+      className="App"
+      style={{
+        margin: "50px",
+      }}
+    >
+      <GlobalStyle />
+      <AuthInput
+        type="text"
+        placeholder="Type your username"
+        Icon={CiUser}
+        name="name"
+        labelTitle="Username"
+        value="mubarak"
+      />
+      <AuthInput
+        type="password"
+        placeholder="Type your password"
+        Icon={BiLock}
+        name="password"
+        labelTitle="Password"
+      />
     </div>
   );
 }
