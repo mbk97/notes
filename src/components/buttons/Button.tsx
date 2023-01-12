@@ -6,7 +6,7 @@ interface IBtnProps {
 }
 
 const Button = styled.button`
-  width: 300px;
+  width: 100%;
   height: 50px;
   background-color: #000000;
   color: #ffffff;
