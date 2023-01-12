@@ -15,6 +15,7 @@ body{
 export const AuthInputWrapper = styled.div`
   margin: 20px 0;
   width: 350px;
+  position: relative;
   @media (max-width: 900px) {
     width: 80%;
   }
@@ -63,4 +64,10 @@ export const AuthBgImg = styled.img`
   width: 100%;
   object-fit: cover;
   object-position: center;
+`;
+
+export const ShowPasswordWrapper = styled.div`
+  position: absolute;
+  top: 40px;
+  right: 10px;
 `;

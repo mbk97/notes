@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { BiHide, BiShow } from "react-icons/bi";
 import styled from "styled-components";
 
 interface InputProps {
@@ -9,6 +10,7 @@ interface InputProps {
   labelTitle: string;
   value?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onClick?: () => void;
 }
 
 const InputWrapper = styled.div`
@@ -51,6 +53,7 @@ const AuthInput = ({
   name,
   labelTitle,
   value,
+  onClick,
   onChange,
 }: InputProps) => {
   return (
