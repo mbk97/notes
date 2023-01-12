@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import AuthButton from "components/buttons/Button";
 import AuthInput from "components/Inputs/AuthInput";
 import authImg from "../assets/images/authbg.jpg";
@@ -10,14 +10,26 @@ import {
   SocialMediaAuthWrapper,
   AuthInputWrapper,
   AuthComponentTextWrapper,
+  ShowPasswordWrapper,
 } from "GlobalStyle/GlobalStyle";
 import { CiUser } from "react-icons/ci";
-import { BiLock } from "react-icons/bi";
+import { BiHide, BiLock } from "react-icons/bi";
 import { FcGoogle } from "react-icons/fc";
 import { FaTwitter } from "react-icons/fa";
 import { CustomHeader } from "components/text/Text";
+import { BiShow } from "react-icons/bi";
 
 const Login = () => {
+  const [passwordType, setPasswordType] = useState("password");
+
+  const togglePassword = () => {
+    if (passwordType === "password") {
+      setPasswordType("text");
+      return;
+    }
+    setPasswordType("password");
+  };
+
   return (
     <AuthLayout>
       <LeftAuthComponent>
@@ -39,12 +51,31 @@ const Login = () => {
         </AuthInputWrapper>
         <AuthInputWrapper>
           <AuthInput
-            type="password"
+            type={passwordType}
             placeholder="Type your password"
             Icon={BiLock}
             name="password"
             labelTitle="Password"
           />
+          <ShowPasswordWrapper>
+            {passwordType === "password" ? (
+              <BiShow
+                style={{
+                  fontSize: "1.5rem",
+                  cursor: "pointer",
+                }}
+                onClick={togglePassword}
+              />
+            ) : (
+              <BiHide
+                style={{
+                  fontSize: "1.5rem",
+                  cursor: "pointer",
+                }}
+                onClick={togglePassword}
+              />
+            )}
+          </ShowPasswordWrapper>
         </AuthInputWrapper>
 
         <AuthInputWrapper>
