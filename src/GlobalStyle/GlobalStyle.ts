@@ -46,6 +46,19 @@ export const LeftAuthComponent = styled.div`
   }
 `;
 
+export const SignUpAuthComponent = styled.div`
+  flex: 40%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 5rem;
+  @media (max-width: 900px) {
+    flex: 100%;
+    margin-top: 10rem;
+    justify-content: center;
+  }
+`;
+
 export const RightAuthComponent = styled.div`
   flex: 40%;
   display: flex;
