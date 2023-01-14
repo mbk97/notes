@@ -6,11 +6,11 @@ import {
   AuthBgImg,
   AuthLayout,
   LeftAuthComponent,
-  RightAuthComponent,
   SocialMediaAuthWrapper,
   AuthInputWrapper,
   AuthComponentTextWrapper,
   ShowPasswordWrapper,
+  SignUpAuthComponent,
 } from "GlobalStyle/GlobalStyle";
 import { CiUser } from "react-icons/ci";
 import { BiHide, BiLock } from "react-icons/bi";
@@ -18,8 +18,9 @@ import { FcGoogle } from "react-icons/fc";
 import { FaTwitter } from "react-icons/fa";
 import { CustomHeader, CustomText } from "components/text/Text";
 import { BiShow } from "react-icons/bi";
+import { AiOutlineMail } from "react-icons/ai";
 
-const Login = () => {
+const SignUp = () => {
   const [passwordType, setPasswordType] = useState("password");
 
   const togglePassword = () => {
@@ -35,9 +36,9 @@ const Login = () => {
       <LeftAuthComponent>
         <AuthBgImg src={authImg} />
       </LeftAuthComponent>
-      <RightAuthComponent>
+      <SignUpAuthComponent>
         <AuthComponentTextWrapper>
-          <CustomHeader>Login</CustomHeader>
+          <CustomHeader>Sign up</CustomHeader>
         </AuthComponentTextWrapper>
 
         <AuthInputWrapper>
@@ -47,6 +48,15 @@ const Login = () => {
             Icon={CiUser}
             name="name"
             labelTitle="Username"
+          />
+        </AuthInputWrapper>
+        <AuthInputWrapper>
+          <AuthInput
+            type="email"
+            placeholder="Type your email"
+            Icon={AiOutlineMail}
+            name="email"
+            labelTitle="Email"
           />
         </AuthInputWrapper>
         <AuthInputWrapper>
@@ -79,7 +89,7 @@ const Login = () => {
         </AuthInputWrapper>
 
         <AuthInputWrapper>
-          <AuthButton>Login</AuthButton>
+          <AuthButton>Sign up</AuthButton>
         </AuthInputWrapper>
         <SocialMediaAuthWrapper>
           <FcGoogle
@@ -103,19 +113,19 @@ const Login = () => {
           }}
         >
           <CustomText>
-            Don’t have an account?{" "}
+            Already have an account?{" "}
             <span
               style={{
                 textDecoration: "underline",
               }}
             >
-              Sign-up
+              Login
             </span>{" "}
           </CustomText>
         </div>
-      </RightAuthComponent>
+      </SignUpAuthComponent>
     </AuthLayout>
   );
 };
 
-export default Login;
+export default SignUp;
