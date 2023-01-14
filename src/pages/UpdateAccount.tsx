@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import AuthButton from "components/buttons/Button";
 import AuthInput from "components/Inputs/AuthInput";
 import authImg from "../assets/images/authbg.jpg";
@@ -6,31 +6,25 @@ import {
   AuthBgImg,
   AuthLayout,
   LeftAuthComponent,
-  SocialMediaAuthWrapper,
   AuthInputWrapper,
   AuthComponentTextWrapper,
-  AbsoluteWrapper,
   SignUpAuthComponent,
 } from "GlobalStyle/GlobalStyle";
 import { CiUser } from "react-icons/ci";
-import { BiHide, BiLock } from "react-icons/bi";
-import { FcGoogle } from "react-icons/fc";
-import { FaTwitter } from "react-icons/fa";
-import { CustomHeader, CustomText } from "components/text/Text";
-import { BiShow } from "react-icons/bi";
+import { CustomHeader } from "components/text/Text";
 import { AiOutlineMail } from "react-icons/ai";
+import ImageInput from "components/Inputs/ImageInput";
 
-const SignUp = () => {
-  const [passwordType, setPasswordType] = useState("password");
+const UpdateAccount = () => {
+  //   const [passwordType, setPasswordType] = useState("password");
 
-  const togglePassword = () => {
-    if (passwordType === "password") {
-      setPasswordType("text");
-      return;
-    }
-    setPasswordType("password");
-  };
-
+  //   const togglePassword = () => {
+  //     if (passwordType === "password") {
+  //       setPasswordType("text");
+  //       return;
+  //     }
+  //     setPasswordType("password");
+  //   };
   return (
     <AuthLayout>
       <LeftAuthComponent>
@@ -38,9 +32,11 @@ const SignUp = () => {
       </LeftAuthComponent>
       <SignUpAuthComponent>
         <AuthComponentTextWrapper>
-          <CustomHeader>Sign up</CustomHeader>
+          <CustomHeader>Update profile</CustomHeader>
         </AuthComponentTextWrapper>
-
+        <AuthInputWrapper>
+          <ImageInput name="image" type="file" placeholder="upload image" />
+        </AuthInputWrapper>
         <AuthInputWrapper>
           <AuthInput
             type="text"
@@ -59,7 +55,7 @@ const SignUp = () => {
             labelTitle="Email"
           />
         </AuthInputWrapper>
-        <AuthInputWrapper>
+        {/* <AuthInputWrapper>
           <AuthInput
             type={passwordType}
             placeholder="Type your password"
@@ -67,7 +63,7 @@ const SignUp = () => {
             name="password"
             labelTitle="Password"
           />
-          <AbsoluteWrapper>
+          <ShowPasswordWrapper>
             {passwordType === "password" ? (
               <BiShow
                 style={{
@@ -85,47 +81,14 @@ const SignUp = () => {
                 onClick={togglePassword}
               />
             )}
-          </AbsoluteWrapper>
-        </AuthInputWrapper>
-
+          </ShowPasswordWrapper>
+        </AuthInputWrapper> */}
         <AuthInputWrapper>
-          <AuthButton>Sign up</AuthButton>
+          <AuthButton>Update profile</AuthButton>
         </AuthInputWrapper>
-        <SocialMediaAuthWrapper>
-          <FcGoogle
-            size={30}
-            style={{
-              cursor: "pointer",
-            }}
-          />
-          <FaTwitter
-            size={30}
-            color="#1DA1F2"
-            style={{
-              cursor: "pointer",
-            }}
-          />
-        </SocialMediaAuthWrapper>
-        <div
-          style={{
-            textAlign: "center",
-            marginTop: "10px",
-          }}
-        >
-          <CustomText>
-            Already have an account?{" "}
-            <span
-              style={{
-                textDecoration: "underline",
-              }}
-            >
-              Login
-            </span>{" "}
-          </CustomText>
-        </div>
       </SignUpAuthComponent>
     </AuthLayout>
   );
 };
 
-export default SignUp;
+export default UpdateAccount;
