@@ -10,7 +10,7 @@ import {
   SocialMediaAuthWrapper,
   AuthInputWrapper,
   AuthComponentTextWrapper,
-  ShowPasswordWrapper,
+  AbsoluteWrapper,
 } from "GlobalStyle/GlobalStyle";
 import { CiUser } from "react-icons/ci";
 import { BiHide, BiLock } from "react-icons/bi";
@@ -57,7 +57,7 @@ const Login = () => {
             name="password"
             labelTitle="Password"
           />
-          <ShowPasswordWrapper>
+          <AbsoluteWrapper>
             {passwordType === "password" ? (
               <BiShow
                 style={{
@@ -75,7 +75,7 @@ const Login = () => {
                 onClick={togglePassword}
               />
             )}
-          </ShowPasswordWrapper>
+          </AbsoluteWrapper>
         </AuthInputWrapper>
 
         <AuthInputWrapper>

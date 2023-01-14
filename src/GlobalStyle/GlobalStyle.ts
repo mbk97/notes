@@ -79,8 +79,19 @@ export const AuthBgImg = styled.img`
   object-position: center;
 `;
 
-export const ShowPasswordWrapper = styled.div`
+export const AbsoluteWrapper = styled.div`
   position: absolute;
   top: 40px;
   right: 10px;
+`;
+
+export const UploadBtn = styled.button`
+  width: 80px;
+  height: 35px;
+  border-radius: 8px;
+  background-color: #000000;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 16px;
+  outline: 0;
 `;
