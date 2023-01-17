@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import placeholderImg from "assets/images/placeholder.png";
 
 interface InputProps {
   type: string;
@@ -64,11 +65,16 @@ const ImageInput = ({ type, placeholder, name }: InputProps) => {
   return (
     <ImageInputContainer>
       <div>
-        {selectedImage && (
-          <React.Fragment>
-            <PreviewImg src={URL.createObjectURL(selectedImage)} alt="Thumb" />
-          </React.Fragment>
-        )}
+        <React.Fragment>
+          <PreviewImg
+            src={
+              selectedImage
+                ? URL.createObjectURL(selectedImage)
+                : placeholderImg
+            }
+            alt="Thumb"
+          />
+        </React.Fragment>
       </div>
       <FormContainer>
         <Form>
