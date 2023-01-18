@@ -15,6 +15,10 @@ const Text = styled.p`
   line-height: 24px;
 `;
 
+const NavTitle = styled(Text)`
+  font-size: 24px;
+`;
+
 const CustomHeader = ({ children }: ITextProps) => {
   return <Header>{children}</Header>;
 };
@@ -23,4 +27,4 @@ const CustomText = ({ children }: ITextProps) => {
   return <Text>{children}</Text>;
 };
 
-export { CustomHeader, CustomText };
+export { CustomHeader, CustomText, NavTitle };

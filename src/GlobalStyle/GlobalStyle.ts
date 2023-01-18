@@ -8,6 +8,9 @@ export const GlobalStyle = createGlobalStyle`
 
 body{
     font-family: 'Playfair Display', serif;
+    background-color: #202124;
+    color: #ffffff;
+    /* Remove this and add it to dark theme component */
     
 }
 `;
