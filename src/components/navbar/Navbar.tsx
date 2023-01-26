@@ -11,15 +11,21 @@ import {
 } from "./style";
 import { FiMenu } from "react-icons/fi";
 import { IoSettingsOutline } from "react-icons/io5";
-import { MdGridView, MdOutlineViewAgenda } from "react-icons/md";
+import { MdGridView } from "react-icons/md";
 import navLogo from "assets/images/navLogo.png";
 import { NavTitle } from "components/text/Text";
 import placeholderImg from "assets/images/placeholder.png";
 import { BiSearch } from "react-icons/bi";
 import SearchInput from "components/Inputs/SearchInput";
 import { AiOutlineArrowLeft } from "react-icons/ai";
+import { useIsSmallScreen } from "hooks/useIsSmallScreen";
 
-const Navbar = () => {
+interface IProps {
+  handleShowSideBar: () => void;
+  handleShowMobileSideBar: () => void;
+}
+
+const Navbar = ({ handleShowSideBar, handleShowMobileSideBar }: IProps) => {
   const [showSearch, setShowSearch] = useState(false);
 
   const handleShowSearch = () => {
@@ -29,10 +35,27 @@ const Navbar = () => {
     setShowSearch(false);
   };
 
+  const { width } = useIsSmallScreen();
+  const breakpoint = 600;
+
+  const handle = () => {
+    if (width > breakpoint) {
+      return handleShowSideBar;
+    } else {
+      return handleShowMobileSideBar;
+    }
+  };
+
   return (
     <NavWrapper>
       <LeftNavItems>
-        <FiMenu size={30} />
+        <FiMenu
+          size={30}
+          style={{
+            cursor: "pointer",
+          }}
+          onClick={handle()}
+        />
         {/* <LogoWrapper> */}
         <NavLogo src={navLogo} alt="Nav_logo" />
         <NavTitle>Notes</NavTitle>

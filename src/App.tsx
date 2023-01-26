@@ -1,17 +1,12 @@
 import React from "react";
 import { GlobalStyle } from "./GlobalStyle/GlobalStyle";
-// import Login from "pages/Login";
-// import SignUp from "pages/SignUp";
-// import UpdateAccount from "pages/UpdateAccount";
-import Navbar from "components/navbar/Navbar";
+import Dashboard from "components/dashboard/Dashboard";
 
 function App() {
   return (
     <div>
       <GlobalStyle />
-      {/* <SignUp /> */}
-      <Navbar />
-      {/* <UpdateAccount /> */}
+      <Dashboard />
     </div>
   );
 }
