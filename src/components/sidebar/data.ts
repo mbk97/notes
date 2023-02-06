@@ -1,5 +1,5 @@
-import { TfiWrite } from "react-icons/tfi";
-import { AiOutlineBell } from "react-icons/ai";
+import { AiOutlineBulb } from "react-icons/ai";
+import { CgBell } from "react-icons/cg";
 import { MdOutlineArchive } from "react-icons/md";
 import { FaRegTrashAlt } from "react-icons/fa";
 
@@ -8,14 +8,14 @@ export const sideBarData = [
     id: 1,
     linkTo: "/",
     name: "Notes",
-    Icon: TfiWrite,
+    Icon: AiOutlineBulb,
     active: true,
   },
   {
     id: 2,
     linkTo: "/reminders",
     name: "Reminders",
-    Icon: AiOutlineBell,
+    Icon: CgBell,
     active: false,
   },
   {

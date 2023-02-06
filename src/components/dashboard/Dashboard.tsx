@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Navbar from "components/navbar/Navbar";
 import { DashboardWrapper, PageContent, SideBarContent } from "./style";
 import SideBar from "components/sidebar/SideBar";
+import Home from "pages/home/Home";
+import Reminders from "pages/reminders/Reminders";
 
 const Dashboard = () => {
   const [expandSideBar, setExpandSideBar] = useState<boolean>(false);
@@ -32,18 +34,14 @@ const Dashboard = () => {
         <SideBarContent>
           <SideBar
             expandSideBar={expandSideBar}
-            handleShowSideBarOnHover={handleShowSideBarOnHover}
-            handleCloseOnHover={handleCloseOnHover}
+            // handleShowSideBarOnHover={handleShowSideBarOnHover}
+            // handleCloseOnHover={handleCloseOnHover}
             expandMobileSideBar={expandMobileSideBar}
           />
         </SideBarContent>
         <PageContent>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-            ea, impedit perspiciatis voluptatum placeat hic asperiores,
-            repudiandae beatae sapiente, debitis exercitationem laudantium sunt
-            facere rerum itaque necessitatibus consequuntur est tempore.
-          </p>
+          {/* <Home /> */}
+          <Reminders />
         </PageContent>
       </DashboardWrapper>
     </React.Fragment>

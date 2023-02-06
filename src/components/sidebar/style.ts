@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const SideBarWrapper = styled.div`
   width: 80px;
-  height: 100vh;
+  height: 90vh;
   display: flex;
+
   &.expanded {
     width: 300px;
   }
@@ -16,7 +17,10 @@ export const SideBarWrapper = styled.div`
   }
 `;
 
-export const NavItemsWrapper = styled.div``;
+export const NavItemsWrapper = styled.div`
+  position: fixed;
+  left: 0;
+`;
 
 export const NavItemsList = styled.ul`
   list-style: none;

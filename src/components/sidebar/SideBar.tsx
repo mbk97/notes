@@ -11,35 +11,35 @@ import {
 
 interface IProps {
   expandSideBar: boolean;
-  handleShowSideBarOnHover: () => void;
-  handleCloseOnHover: () => void;
+  // handleShowSideBarOnHover: () => void;
+  // handleCloseOnHover: () => void;
   expandMobileSideBar: boolean;
 }
 
 const SideBar = ({
   expandSideBar,
-  handleShowSideBarOnHover,
-  handleCloseOnHover,
+  // handleShowSideBarOnHover,
+  // handleCloseOnHover,
   expandMobileSideBar,
 }: IProps) => {
   const { width } = useIsSmallScreen();
   const breakpoint = 600;
 
-  const handleSidebaronMouseEnter = () => {
-    if (width > breakpoint) {
-      return handleShowSideBarOnHover;
-    } else {
-      return;
-    }
-  };
+  // const handleSidebaronMouseEnter = () => {
+  //   if (width > breakpoint) {
+  //     return handleShowSideBarOnHover;
+  //   } else {
+  //     return;
+  //   }
+  // };
 
-  const handleCloseSidebaronMouseLeave = () => {
-    if (width > breakpoint) {
-      return handleCloseOnHover;
-    } else {
-      return;
-    }
-  };
+  // const handleCloseSidebaronMouseLeave = () => {
+  //   if (width > breakpoint) {
+  //     return handleCloseOnHover;
+  //   } else {
+  //     return;
+  //   }
+  // };
   return (
     <SideBarWrapper
       className={
@@ -49,8 +49,8 @@ const SideBar = ({
           ? "expandedMobile"
           : ""
       }
-      onMouseEnter={handleSidebaronMouseEnter()}
-      onMouseLeave={handleCloseSidebaronMouseLeave()}
+      // onMouseEnter={handleSidebaronMouseEnter()}
+      // onMouseLeave={handleCloseSidebaronMouseLeave()}
     >
       <NavItemsWrapper>
         <NavItemsList>
