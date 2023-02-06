@@ -11,7 +11,7 @@ import {
 } from "./style";
 import { FiMenu } from "react-icons/fi";
 import { IoSettingsOutline } from "react-icons/io5";
-import { MdGridView, MdOutlineViewAgenda } from "react-icons/md";
+import { MdGridView } from "react-icons/md";
 import navLogo from "assets/images/navLogo.png";
 import { NavTitle } from "components/text/Text";
 import placeholderImg from "assets/images/placeholder.png";
