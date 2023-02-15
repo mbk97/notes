@@ -7,5 +7,5 @@ export const DashboardWrapper = styled.div`
 
 export const SideBarContent = styled.div``;
 export const PageContent = styled.div`
-  width: auto;
+  width: 100%;
 `;
