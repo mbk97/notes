@@ -18,7 +18,6 @@ const Text = styled.p`
 const NavTitle = styled(Text)`
   font-size: 24px;
 `;
-
 const CustomHeader = ({ children }: ITextProps) => {
   return <Header>{children}</Header>;
 };
