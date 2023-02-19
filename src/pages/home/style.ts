@@ -9,3 +9,9 @@ export const EmptyStateWrapper = styled.div`
   height: 70vh;
   flex-direction: column;
 `;
+
+export const Card = styled.div`
+  width: "100%";
+  height: "250px";
+  background: aquamarine;
+`;

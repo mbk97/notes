@@ -18,6 +18,8 @@ const Dashboard = ({ toggleTheme, theme }: IDashboardProps) => {
   const [expandMobileSideBar, setExpandMobileSideBar] =
     useState<boolean>(false);
 
+  const [layout, setLayout] = useState<boolean>(false);
+
   const handleShowSideBar = () => {
     setExpandSideBar(!expandSideBar);
   };
@@ -25,12 +27,9 @@ const Dashboard = ({ toggleTheme, theme }: IDashboardProps) => {
     setExpandMobileSideBar(!expandMobileSideBar);
   };
 
-  // const handleShowSideBarOnHover = () => {
-  //   setExpandSideBar(true);
-  // };
-  // const handleCloseOnHover = () => {
-  //   setExpandSideBar(false);
-  // };
+  const handleLayoutReset = () => {
+    setLayout(!layout);
+  };
 
   return (
     <React.Fragment>
@@ -39,19 +38,19 @@ const Dashboard = ({ toggleTheme, theme }: IDashboardProps) => {
         handleShowMobileSideBar={handleShowMobileSideBar}
         toggleTheme={toggleTheme}
         theme={theme}
+        handleLayoutReset={handleLayoutReset}
+        layout={layout}
       />
       <DashboardWrapper>
         <SideBarContent>
           <SideBar
             expandSideBar={expandSideBar}
-            // handleShowSideBarOnHover={handleShowSideBarOnHover}
-            // handleCloseOnHover={handleCloseOnHover}
             expandMobileSideBar={expandMobileSideBar}
           />
         </SideBarContent>
         <PageContent>
           <Routes>
-            <Route path="/home" element={<Home />} />
+            <Route path="/home" element={<Home layout={layout} />} />
             <Route path="/reminders" element={<Reminders />} />
             <Route path="/archive" element={<Archived />} />
             <Route path="/trash" element={<Trash />} />

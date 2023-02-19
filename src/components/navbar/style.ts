@@ -74,6 +74,7 @@ export const ViewIconsWrapper = styled.div`
   display: flex;
   gap: 20px;
   align-items: center;
+  cursor: pointer;
   @media (max-width: 600px) {
     gap: 10px;
   }

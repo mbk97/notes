@@ -99,3 +99,34 @@ export const UploadBtn = styled.button`
   font-size: 16px;
   outline: 0;
 `;
+
+export const CardLayoutWrapper = styled.div`
+  &.grid_class {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 50px;
+    @media (max-width: 600px) {
+      margin: 0 0px;
+    }
+  }
+
+  &.flex_class {
+    display: block;
+    margin: auto;
+  }
+`;
+
+export const CardContainer = styled.div`
+  &.small_card {
+    width: 300px;
+    margin: 0 auto;
+    @media (max-width: 600px) {
+      width: 250px;
+    }
+  }
+  &.big_card {
+    width: 70%;
+    margin: 30px auto;
+  }
+`;

@@ -20,10 +20,13 @@ import SearchInput from "components/Inputs/SearchInput";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { useIsSmallScreen } from "hooks/useIsSmallScreen";
 import { BsCloudMoonFill, BsCloudSunFill } from "react-icons/bs";
+import { TfiLayoutColumn2 } from "react-icons/tfi";
 
 interface IProps {
   handleShowSideBar: () => void;
   handleShowMobileSideBar: () => void;
+  handleLayoutReset: () => void;
+  layout: boolean;
   toggleTheme: any;
   theme: string;
 }
@@ -33,6 +36,8 @@ const Navbar = ({
   handleShowMobileSideBar,
   toggleTheme,
   theme,
+  handleLayoutReset,
+  layout,
 }: IProps) => {
   const [showSearch, setShowSearch] = useState(false);
 
@@ -81,7 +86,11 @@ const Navbar = ({
             <BiSearch size={30} onClick={handleShowSearch} />
           </SearchIconWrapper>
           <ViewIconsWrapper>
-            <MdGridView size={30} />
+            {layout ? (
+              <TfiLayoutColumn2 size={30} onClick={handleLayoutReset} />
+            ) : (
+              <MdGridView size={30} onClick={handleLayoutReset} />
+            )}
             {theme === "light" ? (
               <BsCloudMoonFill
                 size={30}
