@@ -1,5 +1,4 @@
-import { useIsSmallScreen } from "hooks/useIsSmallScreen";
-import React from "react";
+import { Link } from "react-router-dom";
 import { sideBarData } from "./data";
 import {
   NavItemsWrapper,
@@ -11,35 +10,14 @@ import {
 
 interface IProps {
   expandSideBar: boolean;
-  // handleShowSideBarOnHover: () => void;
-  // handleCloseOnHover: () => void;
   expandMobileSideBar: boolean;
 }
 
 const SideBar = ({
   expandSideBar,
-  // handleShowSideBarOnHover,
-  // handleCloseOnHover,
+
   expandMobileSideBar,
 }: IProps) => {
-  const { width } = useIsSmallScreen();
-  const breakpoint = 600;
-
-  // const handleSidebaronMouseEnter = () => {
-  //   if (width > breakpoint) {
-  //     return handleShowSideBarOnHover;
-  //   } else {
-  //     return;
-  //   }
-  // };
-
-  // const handleCloseSidebaronMouseLeave = () => {
-  //   if (width > breakpoint) {
-  //     return handleCloseOnHover;
-  //   } else {
-  //     return;
-  //   }
-  // };
   return (
     <SideBarWrapper
       className={
@@ -49,33 +27,39 @@ const SideBar = ({
           ? "expandedMobile"
           : ""
       }
-      // onMouseEnter={handleSidebaronMouseEnter()}
-      // onMouseLeave={handleCloseSidebaronMouseLeave()}
     >
       <NavItemsWrapper>
         <NavItemsList>
           {sideBarData.map(({ id, linkTo, Icon, name, active }) => {
             return (
-              <NavItems
+              <Link
+                to={linkTo}
                 key={id}
-                className={
-                  active && (expandSideBar || expandMobileSideBar)
-                    ? "active_nav_bg"
-                    : "" || active
-                    ? "active_nav"
-                    : ""
-                }
+                style={{
+                  textDecoration: "none",
+                  color: "inherit",
+                }}
               >
-                <Icon size={30} />
-                <NavItemName
-                  style={{
-                    display:
-                      expandSideBar || expandMobileSideBar ? "block" : "none",
-                  }}
+                <NavItems
+                  className={
+                    active && (expandSideBar || expandMobileSideBar)
+                      ? "active_nav_bg"
+                      : "" || active
+                      ? "active_nav"
+                      : ""
+                  }
                 >
-                  {name}
-                </NavItemName>
-              </NavItems>
+                  <Icon size={30} />
+                  <NavItemName
+                    style={{
+                      display:
+                        expandSideBar || expandMobileSideBar ? "block" : "none",
+                    }}
+                  >
+                    {name}
+                  </NavItemName>
+                </NavItems>
+              </Link>
             );
           })}
         </NavItemsList>

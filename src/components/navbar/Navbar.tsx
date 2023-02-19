@@ -11,7 +11,6 @@ import {
   NavContainer,
 } from "./style";
 import { FiMenu } from "react-icons/fi";
-import { IoSettingsOutline } from "react-icons/io5";
 import { MdGridView } from "react-icons/md";
 import navLogo from "assets/images/navLogo.png";
 import { NavTitle } from "components/text/Text";
@@ -20,13 +19,21 @@ import { BiSearch } from "react-icons/bi";
 import SearchInput from "components/Inputs/SearchInput";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { useIsSmallScreen } from "hooks/useIsSmallScreen";
+import { BsCloudMoonFill, BsCloudSunFill } from "react-icons/bs";
 
 interface IProps {
   handleShowSideBar: () => void;
   handleShowMobileSideBar: () => void;
+  toggleTheme: any;
+  theme: string;
 }
 
-const Navbar = ({ handleShowSideBar, handleShowMobileSideBar }: IProps) => {
+const Navbar = ({
+  handleShowSideBar,
+  handleShowMobileSideBar,
+  toggleTheme,
+  theme,
+}: IProps) => {
   const [showSearch, setShowSearch] = useState(false);
 
   const handleShowSearch = () => {
@@ -58,10 +65,8 @@ const Navbar = ({ handleShowSideBar, handleShowMobileSideBar }: IProps) => {
             }}
             onClick={handle()}
           />
-          {/* <LogoWrapper> */}
           <NavLogo src={navLogo} alt="Nav_logo" />
           <NavTitle>Notes</NavTitle>
-          {/* </LogoWrapper> */}
         </LeftNavItems>
         <CenterNavItems className={showSearch ? "showNav" : ""}>
           <SearchInput
@@ -77,7 +82,23 @@ const Navbar = ({ handleShowSideBar, handleShowMobileSideBar }: IProps) => {
           </SearchIconWrapper>
           <ViewIconsWrapper>
             <MdGridView size={30} />
-            <IoSettingsOutline size={30} />
+            {theme === "light" ? (
+              <BsCloudMoonFill
+                size={30}
+                onClick={toggleTheme}
+                style={{
+                  cursor: "pointer",
+                }}
+              />
+            ) : (
+              <BsCloudSunFill
+                size={30}
+                onClick={toggleTheme}
+                style={{
+                  cursor: "pointer",
+                }}
+              />
+            )}
             <ProfileImage src={placeholderImg} alt="profile_image" />
           </ViewIconsWrapper>
         </RightNavItems>

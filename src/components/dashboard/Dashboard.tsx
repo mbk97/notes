@@ -8,7 +8,12 @@ import Archived from "pages/archived/Archived";
 import Trash from "pages/trash/Trash";
 import { Routes, Route } from "react-router-dom";
 
-const Dashboard = () => {
+interface IDashboardProps {
+  theme: string;
+  toggleTheme: any;
+}
+
+const Dashboard = ({ toggleTheme, theme }: IDashboardProps) => {
   const [expandSideBar, setExpandSideBar] = useState<boolean>(false);
   const [expandMobileSideBar, setExpandMobileSideBar] =
     useState<boolean>(false);
@@ -32,6 +37,8 @@ const Dashboard = () => {
       <Navbar
         handleShowSideBar={handleShowSideBar}
         handleShowMobileSideBar={handleShowMobileSideBar}
+        toggleTheme={toggleTheme}
+        theme={theme}
       />
       <DashboardWrapper>
         <SideBarContent>

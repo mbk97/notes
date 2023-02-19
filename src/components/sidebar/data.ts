@@ -6,28 +6,28 @@ import { FaRegTrashAlt } from "react-icons/fa";
 export const sideBarData = [
   {
     id: 1,
-    linkTo: "/",
+    linkTo: "/dashboard/home",
     name: "Notes",
     Icon: AiOutlineBulb,
     active: true,
   },
   {
     id: 2,
-    linkTo: "/reminders",
+    linkTo: "/dashboard/reminders",
     name: "Reminders",
     Icon: CgBell,
     active: false,
   },
   {
     id: 3,
-    linkTo: "/archive",
+    linkTo: "/dashboard/archive",
     name: "Archive",
     Icon: MdOutlineArchive,
     active: false,
   },
   {
     id: 4,
-    linkTo: "/trash",
+    linkTo: "/dashboard/trash",
     name: "Trash",
     Icon: FaRegTrashAlt,
     active: false,

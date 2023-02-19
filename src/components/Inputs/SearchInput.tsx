@@ -15,19 +15,26 @@ const InputWrapper = styled.div`
   gap: 10px;
   width: 100%;
   height: 48px;
-  background-color: white;
+  background-color: ${({ theme }) => theme.inputDefaultBg};
   padding: 0 20px;
   border-radius: 10px;
 `;
 
+const IconWrapper = styled.div`
+  color: ${({ theme }) => theme.inputTextColor};
+`;
+
 const Input = styled.input`
-  /* border-radius: 10px; */
   background-color: transparent;
   font-size: 18px;
   height: 45px;
   width: 90%;
   border: 0;
   outline: 0;
+
+  &::placeholder {
+    color: ${({ theme }) => theme.inputTextColor};
+  }
 `;
 
 const SearchInput = ({
@@ -39,13 +46,15 @@ const SearchInput = ({
 }: IProps) => {
   return (
     <InputWrapper>
-      <Icon
-        style={{
-          color: "black",
-          fontSize: "20px",
-        }}
-        onClick={onClick}
-      />
+      <IconWrapper>
+        <Icon
+          style={{
+            color: "inherit",
+            fontSize: "20px",
+          }}
+          onClick={onClick}
+        />
+      </IconWrapper>
       <Input type={type} placeholder={placeholder} onChange={onChange} />
     </InputWrapper>
   );
