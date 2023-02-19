@@ -13,6 +13,7 @@ const Header = styled.h2`
 const Text = styled.p`
   font-size: 18px;
   line-height: 24px;
+  color: ${({ theme }) => theme.titlePrimary};
 `;
 
 const NavTitle = styled(Text)`

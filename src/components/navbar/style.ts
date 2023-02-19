@@ -4,7 +4,7 @@ export const NavContainer = styled.div`
   position: sticky;
   top: 0;
   z-index: 1;
-  background-color: #202124;
+  background-color: ${({ theme }) => theme.background};
 `;
 
 export const NavWrapper = styled.div`
@@ -21,9 +21,11 @@ export const LeftNavItems = styled.div`
   display: flex;
   align-items: center;
   gap: 20px;
+  margin-left: 20px;
 
   @media (max-width: 600px) {
     gap: 10px;
+    margin-left: 0px;
   }
 `;
 
