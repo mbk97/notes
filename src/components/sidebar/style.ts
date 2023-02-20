@@ -12,8 +12,8 @@ export const SideBarWrapper = styled.div`
 
   &.expandedMobile {
     position: absolute;
-    width: 300px;
-    background-color: blue;
+    width: 80%;
+    background-color: rgba(0, 0, 0, 0.7);
     z-index: 1;
   }
 `;
@@ -42,9 +42,9 @@ export const NavItems = styled.li`
   cursor: pointer;
   :hover {
     background-color: rgba(255, 255, 255, 0.3);
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
     transition: all ease-in-out 0.2s;
+    border-radius: 50%;
+    height: 60px;
   }
   /* This is the class added to active nav */
   &.active_nav {

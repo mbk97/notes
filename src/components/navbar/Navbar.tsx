@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   CenterNavItems,
   LeftNavItems,
@@ -29,6 +29,7 @@ interface IProps {
   layout: boolean;
   toggleTheme: any;
   theme: string;
+  navTitle: string;
 }
 
 const Navbar = ({
@@ -38,6 +39,7 @@ const Navbar = ({
   theme,
   handleLayoutReset,
   layout,
+  navTitle,
 }: IProps) => {
   const [showSearch, setShowSearch] = useState(false);
 
@@ -71,7 +73,7 @@ const Navbar = ({
             onClick={handle()}
           />
           <NavLogo src={navLogo} alt="Nav_logo" />
-          <NavTitle>Notes</NavTitle>
+          <NavTitle>{navTitle}</NavTitle>
         </LeftNavItems>
         <CenterNavItems className={showSearch ? "showNav" : ""}>
           <SearchInput

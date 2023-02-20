@@ -18,6 +18,8 @@ const Dashboard = ({ toggleTheme, theme }: IDashboardProps) => {
   const [expandMobileSideBar, setExpandMobileSideBar] =
     useState<boolean>(false);
 
+  const [navTitle, setNavTitle] = useState<string>("Home");
+
   const [layout, setLayout] = useState<boolean>(false);
 
   const handleShowSideBar = () => {
@@ -40,12 +42,15 @@ const Dashboard = ({ toggleTheme, theme }: IDashboardProps) => {
         theme={theme}
         handleLayoutReset={handleLayoutReset}
         layout={layout}
+        navTitle={navTitle}
       />
       <DashboardWrapper>
         <SideBarContent>
           <SideBar
             expandSideBar={expandSideBar}
             expandMobileSideBar={expandMobileSideBar}
+            setNavTitle={setNavTitle}
+            navTitle={navTitle}
           />
         </SideBarContent>
         <PageContent>

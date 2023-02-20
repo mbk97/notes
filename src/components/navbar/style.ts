@@ -68,6 +68,9 @@ export const RightNavItems = styled.div`
 export const NavLogo = styled.img`
   height: 50px;
   width: 50px;
+  @media (max-width: 600px) {
+    display: none;
+  }
 `;
 
 export const ViewIconsWrapper = styled.div`

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { sideBarData } from "./data";
 import {
   NavItemsWrapper,
@@ -11,12 +11,15 @@ import {
 interface IProps {
   expandSideBar: boolean;
   expandMobileSideBar: boolean;
+  setNavTitle: (name: string) => void;
+  navTitle: string;
 }
 
 const SideBar = ({
   expandSideBar,
-
+  setNavTitle,
   expandMobileSideBar,
+  navTitle,
 }: IProps) => {
   return (
     <SideBarWrapper
@@ -30,22 +33,23 @@ const SideBar = ({
     >
       <NavItemsWrapper>
         <NavItemsList>
-          {sideBarData.map(({ id, linkTo, Icon, name, active }) => {
+          {sideBarData.map(({ id, linkTo, Icon, name }) => {
             return (
-              <Link
+              <NavLink
                 to={linkTo}
                 key={id}
                 style={{
                   textDecoration: "none",
                   color: "inherit",
                 }}
+                onClick={() => setNavTitle(name)}
               >
                 <NavItems
                   className={
-                    active && (expandSideBar || expandMobileSideBar)
-                      ? "active_nav_bg"
-                      : "" || active
+                    navTitle === name && !expandSideBar
                       ? "active_nav"
+                      : "" || (expandSideBar && navTitle === name)
+                      ? "active_nav_bg"
                       : ""
                   }
                 >
@@ -59,7 +63,7 @@ const SideBar = ({
                     {name}
                   </NavItemName>
                 </NavItems>
-              </Link>
+              </NavLink>
             );
           })}
         </NavItemsList>
